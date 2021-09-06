@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <%- include('./templates/header') %>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <%- include('./templates/navbar') %>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <h3>Despacho producto lata</h3>
+            </div>
+            <form method="post">
+                <div class="row m-3">
+                    <label for="code" class="col-sm-2 col-form-label">Id Load</label>
+                    <div class="col-sm-4">
+                        <select id="Id" name="town" class="form-select" required>
+                            <option value="">Seleccione el ID Load</option>
+                            <%ID_Load.forEach(Id => { %>
+                                <option value = "<%= Id.code%>"><%= Id.code%></option>
+                            <%})%>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row m-3">
+                        <label for="lastName" class="col-sm-2 col-form-label">CD Destino</label>
+                        <div class="col-sm-4">
+                            
+                            <select id="destino" name="town" class="form-select" required>
+                                <option value="">Seleccione Destino</option>
+                                <%CD_Destino.forEach(destino => { %>
+                                    <option value1 = "<%= destino.code%>"><%= destino.name%></option>
+                                <%})%>
+                            </select>
+                        </div>
+                </div>
+
+                <div class="row m-3">
+                        <label for="name" class="col-sm-2 form-label">Tipo Producto</label>
+                        <div class="col-sm-4">
+                            
+                            <select id="producto" name="town" class="form-select" required>
+                                <option value="">Seleccione Tipo de Producto</option>
+                                <%Tipo_Producto.forEach(producto => { %>
+                                    <option value1 = "<%= producto.code%>"><%= producto.name%></option>
+                                <%})%>
+                            </select>
+                         </div>
+                </div>
+
+                <div class="row m-3">
+                        <label for="dpto" class="col-sm-2 form-label">Hora Salida</label>
+                        <div class="col-sm-4">
+                            <input type="datetime-local" name="lastName" id="hora" class="form-control" pattern="[a-zA-z\s]+" required>
+                           
+                                               
+                    </div>
+                </div>
+
+                <div class="row m-3">
+                        <label for="towns" class="col-sm-2 form-label">Tipo Vehiculo</label>
+                        <div class="col-sm-4">
+                           
+                        <select id="vehiculo" name="town" class="form-select">
+                            <option value="">Seleccione Tipo de Vehiculo</option>
+                            <%Tipo_Vehiculo.forEach(vehiculo => { %>
+                                <option value1 = "<%= vehiculo.code%>"><%= vehiculo.name%></option>
+                            <%})%>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row m-3">
+                        <label for="email" class="col-sm-2 form-label">Modo Cargue</label>
+                        <div class="col-sm-4">
+                            
+                            <select id="cargue" name="town" class="form-select">
+                                <option value="">Seleccione Modo de Cargue</option>
+                                <%Modo_Cargue.forEach(cargue => { %>
+                                    <option value1 = "<%= cargue.code%>"><%= cargue.name%></option>
+                                <%})%>
+                            </select>
+                    </div>
+                </div>
+
+
+                <div class="row mt-3">
+                    <button type="submit" class="btn btn-primary">Enviar Datos</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('./templates/footer') %>
+
+</body>
+</html>
+© 2021 GitHub, Inc.
